@@ -49,7 +49,7 @@ def get_cookies():
             cookie_offsets = [unpack('<i', page.read(4))[0] for n in range(num_cookies)]
 
             # Field 4: 4 byte footer: '\x00\x00\x00\x00'
-            page_footer = unpack('>i', page.read(4))[0]
+            _page_footer = unpack('>i', page.read(4))[0]
 
             for offset in cookie_offsets:
                 cookie = {}
@@ -78,7 +78,7 @@ def get_cookies():
                     ))
 
                 # Field 9: 8 byte footer: '\x00\x00\x00\x00\x00\x00\x00\x00'
-                cookie_offset_footer = cookie_bytes.read(8)
+                _cookie_offset_footer = cookie_bytes.read(8)
 
                 # Seconds between Mac Epoch and Unix Epoch
                 mac_epoch = int(datetime(2001,1,1).strftime("%s"))
