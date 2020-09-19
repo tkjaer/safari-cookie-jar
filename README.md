@@ -1,10 +1,12 @@
-SafariCookieJar.get_cookies() returns a nested dict:
+# safari-cookie-jar
+
+safari_cookie_jar.get_cookies() returns a nested dict:
 ```
 { 'url': { 'path': { 'name': { 'expiry_time': '', 'flags': '', 'last_access_time': '', 'value': '', } } } }
 ```
 
 ```sh
-$ python3 -c "import SafariCookieJar, pprint; pprint.pprint(SafariCookieJar.get_cookies())"
+$ python3 -c "import safari_cookie_jar, pprint; pprint.pprint(safari_cookie_jar.get_cookies())"
 {'lobste.rs': {'/': {'lobster_trap': {'expiry_time': 1519203368.0,
                                       'flags': 5,
                                       'last_access_time': 1516524969.0,
